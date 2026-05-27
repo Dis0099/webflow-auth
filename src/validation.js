@@ -7,4 +7,8 @@ function validatePassword(password) {
     return password.length >= 8;
 }
 
-module.exports = { validateEmail, validatePassword };
+function sanitizeInput(input) {
+    return input.replace(/[<>]/g, '');
+}
+
+module.exports = { validateEmail, validatePassword, sanitizeInput };
