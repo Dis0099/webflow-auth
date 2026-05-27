@@ -3,10 +3,11 @@ function checkCredentals(username, password) {
     return username && password;
 }
 
-console.log('Debug: auth module loaded');  // отладочный код
-
 function login(username, password) {
-    // TODO: Implement
+    if (checkCredentals(username, password)) {
+        return { success: true, token: 'abc123' };
+    }
+    return { success: false };
 }
 
 module.exports = { login, checkCredentals };
